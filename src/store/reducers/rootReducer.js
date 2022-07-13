@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { filterReducer } from "./filterReducer";
-import { todoReducer } from "./todosReducer";
+import { todoReducer } from "./todosReducer";//revisarr---------se importo como todosReducer
 import { userReducer } from "./userReducer";
 
 

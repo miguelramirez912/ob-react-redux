@@ -20,14 +20,14 @@ export function* workerSaga(action) {
             payload: {
                 token: token
             }
-        })
+        });
     } catch (error) {
         yield put({
             type: action.payload.failAction,
             payload: {
                 error: error
             }
-        })
+        });
     }
 }
 

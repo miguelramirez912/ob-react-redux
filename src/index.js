@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createAppStore, createAsyncAppStore } from './store/config/storeConfig';
+import { createAppStore, createAppAsyncStore } from './store/config/storeConfig';
 import { Provider } from 'react-redux';
 import AppReduxSaga from './AppReduxSaga'
 
 
 // let appStore = createAppStore();
-let appAsyncStore = createAsyncAppStore();
+let appAsyncStore = createAppAsyncStore();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

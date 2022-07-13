@@ -23,7 +23,7 @@ export const userReducer = (state=initialState, action) => {
             return {
                 ...state,
                 fetching: false,
-                token: action.playload.token,
+                token: action.payload.token,
                 error: null,
                 loged: true
             };
@@ -32,7 +32,7 @@ export const userReducer = (state=initialState, action) => {
             ...state,
             fetching: false,
             token: null,
-            error: action.playload.error,
+            error: action.payload.error,
             loged: false
         }
     

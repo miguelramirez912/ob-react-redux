@@ -1,7 +1,8 @@
-import { createStore, compose } from "redux";
-import { composeWithDevTools} from 'redux-devtools-extension'
+import { createStore, compose, applyMiddleware } from "redux";
+import { composeWithDevTools} from 'redux-devtools-extension';
 import { rootReducer } from "../reducers/rootReducer";
-import createSagaMiddleware from "@redux-saga/core";
+// import createSagaMiddleware from "@redux-saga/core";
+import createSagaMiddleware from 'redux-saga';
 import { watcherSaga } from "../sagas/sagas";
 
 export const createAppStore = () => {
@@ -9,12 +10,12 @@ export const createAppStore = () => {
     return store;
 }
 
-export const createAsyncAppStore = () => {
-    const sagaMiddleware = createSagaMiddleware()
+export const createAppAsyncStore = () => {
+    const sagaMiddleware = createSagaMiddleware();
 
     let store = createStore(
         rootReducer, 
-        compose(sagaMiddleware, composeWithDevTools()),
+        compose(applyMiddleware(sagaMiddleware), composeWithDevTools())
         );
 
     sagaMiddleware.run(watcherSaga);
